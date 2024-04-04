@@ -1,5 +1,5 @@
 "use strict";
-
+//Import required modules
 const port = 3000,
   http = require("http"),
   httpStatus = require("http-status-codes"),
@@ -7,6 +7,8 @@ const port = 3000,
   contentTypes = require("./contentTypes"),
   utils = require("./utils");
 
+//Add a series of routes 
+//for web pages and assets.
 router.get("/", (req, res) => {
   res.writeHead(httpStatus.OK, contentTypes.htm);
   utils.getFile("views/index.html", res);
@@ -57,5 +59,6 @@ router.get("/confetti_cuisine.js", (req, res) => {
   utils.getFile("public/js/confetti_cuisine.js", res);
 });
 
+//Start the server.
 http.createServer(router.handle).listen(port);
 console.log(`The server is listening on port number: ${port}`);
