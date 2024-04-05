@@ -1,4 +1,5 @@
 "use strict";
+
 //Export content type mapping object.
 module.exports = {
   html: {

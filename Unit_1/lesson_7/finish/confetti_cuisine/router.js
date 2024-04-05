@@ -3,12 +3,14 @@
 const httpStatus = require("http-status-codes"),
   contentTypes = require("./contentTypes"),
   utils = require("./utils");
+
 //Create a routes object 
 //to hold route functions.
 const routes = {
   GET: {},
   POST: {}
 };
+
 //Create the handle function
 //to handle requests.
 exports.handle = (req, res) => {
@@ -19,6 +21,7 @@ exports.handle = (req, res) => {
     utils.getFile("views/error.html", res);
   }
 };
+
 //Create the get and post 
 //functions to map route functions
 exports.get = (url, action) => {

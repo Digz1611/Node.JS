@@ -1,8 +1,10 @@
 "use strict";
+
 //Import modules for use in getFile.
 const fs = require("fs"),
   httpStatus = require("http-status-codes"),
   contentTypes = require("./contentTypes");
+
 //Export a function to read
 //files and return a response.
 module.exports = {
