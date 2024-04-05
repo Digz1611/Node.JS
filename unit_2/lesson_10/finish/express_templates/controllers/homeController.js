@@ -6,5 +6,6 @@ exports.sendReqParam = (req, res) => {
 };
 
 exports.respondWithName = (req, res) => {
-  res.render("index");
-};
+  res.render("index", { theName: req.params.myName });
+ };
+
