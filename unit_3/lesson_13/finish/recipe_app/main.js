@@ -21,16 +21,16 @@ MongoDB.connect(
         console.log(data);
       });
 
-    db.collection("contacts").insert(
-      {
-        name: "Freddie Mercury",
-        email: "fred@queen.com"
-      },
-      (error, db) => {
-        if (error) throw error;
-        console.log(db);
-      }
-    );
+//     db.collection("contacts").insert(
+//       {
+//         name: "Freddie Mercury",
+//         email: "fred@queen.com"
+//       },
+//       (error, db) => {
+//         if (error) throw error;
+//         console.log(db);
+//       }
+//     );
   }
 );
 
