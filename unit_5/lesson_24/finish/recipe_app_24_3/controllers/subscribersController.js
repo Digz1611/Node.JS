@@ -22,7 +22,7 @@ module.exports = {
   saveSubscriber: (req, res) => {
     let newSubscriber = new Subscriber({
       name: req.body.name,
-      email: req.body.email,
+      email: req.body.email.trim(),
       zipCode: req.body.zipCode
     });
     newSubscriber
