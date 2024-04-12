@@ -24,13 +24,13 @@ const mongoose = require("mongoose"),
         lowercase: true,
         unique: true
       },
-      // apiToken: {
-      //   type: String
-      // },
       zipCode: {
         type: Number,
         min: [1000, "Zip code too short"],
         max: 99999
+      },
+      apiToken: {
+        type: String
       },
       courses: [{ type: Schema.Types.ObjectId, ref: "Course" }],
       subscribedAccount: {
