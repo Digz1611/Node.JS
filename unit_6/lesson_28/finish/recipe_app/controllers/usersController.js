@@ -163,21 +163,23 @@ module.exports = {
     res.locals.redirect = "/";
     next();
   },
-  // verifyToken: (req, res, next) => {
-  //   let token = req.query.apiToken;
-  //   if (token) {
-  //     User.findOne({ apiToken: token })
-  //       .then(user => {
-  //         if (user) next();
-  //         else next(new Error("Invalid API token."));
-  //       })
-  //       .catch(error => {
-  //         next(new Error(error.message));
-  //       });
-  //   } else {
-  //     next(new Error("Invalid API token."));
-  //   }
-  // },
+  
+  verifyToken: (req, res, next) => {
+    let token = req.query.apiToken;
+    if (token) {
+      User.findOne({ apiToken: token })
+        .then(user => {
+          if (user) next();
+          else next(new Error("Invalid API token."));
+        })
+        .catch(error => {
+          next(new Error(error.message));
+        });
+    } else {
+      next(new Error("Invalid API token."));
+    }
+  },
+  
   apiAuthenticate: (req, res, next) => {
     passport.authenticate("local", (errors, user) => {
       if (user) {
